@@ -1,0 +1,9 @@
+// ({% for column in columnList %}{{column.langType}} {{column.langName}}{% if not loop.last %}, {% endif %}{% endfor %})
+
+@Data
+class {{name | to_upper_snake_case}} {
+{% for column in columnList %}
+    @Column(name = "{{column.dbName}}")
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+}

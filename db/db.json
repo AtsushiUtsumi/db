@@ -1,0 +1,61 @@
+{
+    "name": "",
+    "domain": "oracle",
+    "description": "で使うデータベース",
+    "tableList": [
+        {
+            "name": "user",
+            "description": "ユーザー",
+            "columnList": [
+                {
+                    "langName": "userName",
+                    "langType": "String",
+                    "dbName": "USER_NAME",
+                    "dbType": "varchar(5)"
+                },
+                {
+                    "langName": "userName",
+                    "langType": "String",
+                    "dbName": "USER_NAME",
+                    "dbType": "varchar(5)"
+                }
+            ]
+        },
+        {
+            "name": "modelGroup",
+            "description": "モデルグループ",
+            "columnList": [
+                {
+                    "langName": "modelGroupCd",
+                    "langType": "String",
+                    "dbName": "MODEL_GROUP_CD",
+                    "dbType": "VARCHAR(2)"
+                },
+                {
+                    "langName": "modelGroupNm",
+                    "langType": "String",
+                    "dbName": "MODEL_GROUP_NM",
+                    "dbType": "VARCHAR(30)"
+                }
+            ]
+        },
+        {
+            "name": "productGroup",
+            "description": "製品グループ",
+            "columnList": [
+                {
+                    "langName": "productGroupCd",
+                    "langType": "String",
+                    "dbName": "PRODUCT_GROUP_CD",
+                    "dbType": "VARCHAR(2)"
+                },
+                {
+                    "langName": "productGroupNm",
+                    "langType": "String",
+                    "dbName": "PRODUCT_GROUP_NM",
+                    "dbType": "VARCHAR(30)"
+                }
+            ]
+        }
+    ]
+}
