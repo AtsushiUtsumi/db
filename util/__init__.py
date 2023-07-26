@@ -32,8 +32,14 @@ class CaseConverter:
     def to_kebab_case(self):
         return self.to_lower_snake_case().replace('_', '-')
 
+def to_lower_snake_case(param):
+    return CaseConverter(param).to_lower_snake_case()
 def to_upper_snake_case(param):
     return CaseConverter(param).to_upper_snake_case()
+def to_lower_camel_case(param):
+    return CaseConverter(param).to_lower_camel_case()
+def to_upper_camel_case(param):
+    return CaseConverter(param).to_upper_camel_case()
 
 def get_template_file_path(language: str, template_type: str):
     template_file_path: str = ''
@@ -58,7 +64,10 @@ def create_concrete_from_params(template_file_name: str, params: dict, output_fi
 
 
     env = Environment(loader=FileSystemLoader('.'), trim_blocks=False)
+    env.filters['to_lower_snake_case'] = to_lower_snake_case
     env.filters['to_upper_snake_case'] = to_upper_snake_case
+    env.filters['to_lower_camel_case'] = to_lower_camel_case
+    env.filters['to_upper_camel_case'] = to_upper_camel_case
     template = env.get_template(template_file_name)
     #template = Template(template_file.read())
     #template_file.close()
@@ -85,7 +94,10 @@ def create_concrete_from_files(template_file_name: str, params_file_name: str, o
     # template_file.close()
 
     env = Environment(loader=FileSystemLoader('.'), trim_blocks=False)
+    env.filters['to_lower_snake_case'] = to_lower_snake_case
     env.filters['to_upper_snake_case'] = to_upper_snake_case
+    env.filters['to_lower_camel_case'] = to_lower_camel_case
+    env.filters['to_upper_camel_case'] = to_upper_camel_case
     template = env.get_template(template_file_name)
 
     # パラメータファイル読み込み

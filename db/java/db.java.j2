@@ -1,5 +1,8 @@
 // ({% for column in columnList %}{{column.langType}} {{column.langName}}{% if not loop.last %}, {% endif %}{% endfor %})
-
+// {{name | to_lower_snake_case}}
+// {{name | to_upper_snake_case}}
+// {{name | to_lower_camel_case}}
+// {{name | to_upper_camel_case}}
 @Data
 class {{name | to_upper_snake_case}} {
 {% for column in columnList %}
