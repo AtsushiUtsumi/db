@@ -1,12 +1,69 @@
+package {{package}}.{{name | to_lower_camel_case}};
+
 // ({% for column in columnList %}{{column.langType}} {{column.langName}}{% if not loop.last %}, {% endif %}{% endfor %})
 // {{name | to_lower_snake_case}}
 // {{name | to_upper_snake_case}}
 // {{name | to_lower_camel_case}}
 // {{name | to_upper_camel_case}}
 @Data
-class {{name | to_upper_snake_case}} {
+class {{name | to_upper_camel_case}} {
 {% for column in columnList %}
     @Column(name = "{{column.dbName}}")
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+}
+
+class {{name | to_upper_camel_case}}ListAction {
+{% for column in columnList %}
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+}
+
+class {{name | to_upper_camel_case}}ListBean {
+{% for column in columnList %}
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+}
+
+class {{name | to_upper_camel_case}}ListForm {
+{% for column in columnList %}
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+}
+
+class {{name | to_upper_camel_case}}DetailAction {
+{% for column in columnList %}
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+    public String insert() {};
+    public String update() {};
+    public String delete() {};
+}
+
+class {{name | to_upper_camel_case}}DetailForm {
+{% for column in columnList %}
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+}
+
+
+
+// 以下、サーバサイド
+class {{name | to_upper_camel_case}} {
+{% for column in columnList %}
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+}
+
+class {{name | to_upper_camel_case}}FindList {
+{% for column in columnList %}
+    private {{column.langType}} {{column.langName}};
+{% endfor %}
+    public String findList() {};
+}
+
+class {{name | to_upper_camel_case}}Dao {
+{% for column in columnList %}
     private {{column.langType}} {{column.langName}};
 {% endfor %}
 }

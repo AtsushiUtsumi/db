@@ -27,9 +27,9 @@ def dao(extension: str):
     input_file_name = 'db/db.json'
     input_file = codecs.open(input_file_name, 'r', 'utf8')
     domain_dict = json.load(input_file)
+    global_params = {'package': domain_dict.get('packageName') + '.' + domain_dict.get('groupId')}
     for table in domain_dict.get('tableList'):
         table_name = table['name']
-        columnList = table['columnList']
         mkdir(dao_root + '/' + table_name)
         class_name = util.CaseConverter(table_name).to_upper_camel_case()
         util.create_concrete_from_params(f'db/{extension}/db.{extension}.j2', table, f'{dao_root}/{table_name}/{class_name}.{extension}')

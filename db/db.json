@@ -2,8 +2,11 @@
     "name": "",
     "domain": "oracle",
     "description": "で使うデータベース",
+    "groupId": "cdmsale",
+    "packageName": "jp.co.khi",
     "tableList": [
         {
+            "id": "11",
             "name": "user",
             "description": "ユーザー",
             "columnList": [
